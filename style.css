@@ -1,0 +1,86 @@
+h1 {
+  color: lime;
+  text-align: right;
+  margin-right: 40px;
+  font-family:sans-serif;
+  
+}
+
+h2 {
+  color: lime;
+  text-align: right;
+  margin-right: 40px;
+  margin-top: 20px;
+  font-family: sans-serif;
+  text-shadow: 0px 20px 0px 20px;color:rgb(57, 183, 57);
+}
+body {
+  background-color: black;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+}
+
+#counter {
+  width: 500px;
+  height: 320px;
+  background-color: lime;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 50%;
+  box-shadow: 20px 20px 20px 20px; color:rgb(12, 45, 12);
+
+}
+
+#number {
+  width: 200px;
+  height: 130px;
+  background-color: black;
+  color: lime;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald';
+  font-size: 60px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+
+#pulsanti {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+button {
+  width: 60px;
+  height: 60px;
+  outline: none;
+  border: none;
+  background-color: black;
+  color: lime;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald';
+  font-size: 60px;
+  margin: 0 30px;
+  box-shadow: 10px 10px 10px 10px; color: rgb(122, 245, 122);
+  cursor:pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+
+button:hover {
+  transform: scale(1.10);
+}
+
+button:active {
+  background-color: beige;
+}
