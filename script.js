@@ -1,43 +1,35 @@
-/*aggiungo un listener per l'evento DOMContentLoaded,
-che viene attivato quando il DOM è completamente caricato*/
+// Associamo il gestore di eventi all'elemento HTML, e carico con DOMContentLoaded
 document.addEventListener("DOMContentLoaded", function() {
 
-  // Apro la variabile con count a 0, che poi manipolerò
   let count = 0;
 
-  //Seleziono il primo elemento ID decrease e aggiungo un listener per l'evento click
-  document.getElementById("decrease").onclick = function(){
-
-  //quando il pulsante decrease viene cliccato, il numero decrementa il valore del count, inoltre ho aggiunto la condizione if
-  //per non far entrare il numero in negativo
-  if (count !== 0){
-    count --;
+  // funzione per incrementare il contatore
+  function increment() {
+    count++;
+    updateCounterElement();
   }
 
-  //Aggiorno il contenuto con l'elemento ID number con il nuovo valore di count
-  document.getElementById("number").innerHTML = count;
+  // funzione per decrementare il contatore
+  function decrement() {
+    if (count !== 0) {
+      count--;
+      updateCounterElement();
+    }
+  } 
 
-};
+  // funzione per reimpostare il contatore a zero
+  function reset() {
+    count = 0;
+    updateCounterElement();
+  }
 
-// Selexiono il secondo elemento ID resetButton e aggiungo un listener per l'evento click
-document.getElementById("resetButton").onclick = function(){
+  // funzione per aggiornare l'elemento HTML
+  function updateCounterElement() {
+    document.getElementById("number").innerHTML = count;
+  }
 
-  //quando il pulsante reset viene cliccato, il numero automaticamente si resetta
-  count = 0;
-
-// Aggiorno il contenuto con l'elemento ID number modificato
-  document.getElementById("number").innerHTML = count;
-
-};
-// Seleziono il terzo e ultimo elemento increase e aggiungo sempre il listener per l'evento click
-document.getElementById("increase").onclick = function(){
-
-  // quando il pulsante viene cliccato il numero incrementa di uno
-  count += 1;
-
-  // Aggiorno il contenuto di quest'ultima funzione con l'elemento ID number per quest'ultima function 
-  document.getElementById("number").innerHTML = count;
-
-};
-
+  // Associamo le diverse funzioni ai pulsanti
+  document.getElementById("decrease").onclick = decrement;
+  document.getElementById("resetButton").onclick = reset;
+  document.getElementById("increase").onclick = increment;
 });
